@@ -25,7 +25,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 82, 81, 81),
+        backgroundColor: Colors.white,
         body: screens[currentIndex],
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),

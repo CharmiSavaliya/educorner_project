@@ -1,14 +1,14 @@
-import 'package:educorner_project/screen/homescreen.dart';
+import 'package:educorner_project/settingscreens/settingscreen.dart';
 import 'package:flutter/material.dart';
 
-class BookmarkScreen extends StatefulWidget {
-  const BookmarkScreen({super.key});
+class MyDownloadScreen extends StatefulWidget {
+  const MyDownloadScreen({super.key});
 
   @override
-  State<BookmarkScreen> createState() => _BookmarkScreenState();
+  State<MyDownloadScreen> createState() => _MyDownloadScreenState();
 }
 
-class _BookmarkScreenState extends State<BookmarkScreen> {
+class _MyDownloadScreenState extends State<MyDownloadScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   children: [
                     IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop(HomeScreen());
+                        Navigator.of(context).pop(SettingScreen());
                       },
                       icon: Icon(
                         Icons.arrow_back,
@@ -36,194 +36,10 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      'Bookmarks',
+                      'My Downloads',
                       style: TextStyle(color: Colors.black, fontSize: 25),
                     ),
                   ],
-                ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 370,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(3),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
-                              blurRadius: 10,
-                              spreadRadius: 1,
-                            ),
-                          ],
-                        ),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                          Image.asset('assets/bookmark1.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    const Text(
-                                      "DevOps",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    SizedBox(width: 105),
-                                    Icon(Icons.delete_outline_rounded),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "\$200",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    SizedBox(width: 15),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFFFFAF0C),
-                                      size: 19,
-                                    ),
-                                    const Text(
-                                      "4.8",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    SizedBox(width: 5),
-                                    const Text(
-                                      "(1.8k Learners)",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ]),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 370,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(3),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
-                              blurRadius: 10,
-                              spreadRadius: 1,
-                            ),
-                          ],
-                        ),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                          Image.asset('assets/bookmark3.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    const Text(
-                                      "Flutter Flow",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    SizedBox(width: 70),
-                                    Icon(Icons.delete_outline_rounded),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "\$299",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                    SizedBox(width: 15),
-                                  ],
-                                ),
-                                SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xFFFFAF0C),
-                                      size: 19,
-                                    ),
-                                    const Text(
-                                      "4.8",
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    SizedBox(width: 5),
-                                    const Text(
-                                      "(1.8k Learners)",
-                                      style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ]),
-                      ),
-                    ],
-                  ),
                 ),
                 SizedBox(height: 20),
                 Padding(
@@ -272,11 +88,11 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Free",
+                                      "Mike Williams",
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500,
-                                        color: Colors.blue,
+                                        color: Colors.grey,
                                       ),
                                     ),
                                     SizedBox(width: 15),
@@ -364,11 +180,195 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Free",
+                                      "Abbas Hssan",
                                       style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500,
-                                        color: Colors.blue,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFFFFAF0C),
+                                      size: 19,
+                                    ),
+                                    const Text(
+                                      "4.8",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5),
+                                    const Text(
+                                      "(1.8k Learners)",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 370,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(3),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              offset: Offset(-5, 5),
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                          Image.asset('assets/down3.png'),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Text(
+                                      "Ruby Language",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 40),
+                                    Icon(Icons.delete_outline_rounded),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Jackson Ted",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xFFFFAF0C),
+                                      size: 19,
+                                    ),
+                                    const Text(
+                                      "4.8",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5),
+                                    const Text(
+                                      "(1.8k Learners)",
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 370,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(3),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              offset: Offset(-5, 5),
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                            ),
+                          ],
+                        ),
+                        child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                          Image.asset('assets/down4.png'),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Text(
+                                      "Flutter Flow",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    SizedBox(width: 70),
+                                    Icon(Icons.delete_outline_rounded),
+                                  ],
+                                ),
+                                SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "John David",
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey,
                                       ),
                                     ),
                                     SizedBox(width: 15),
