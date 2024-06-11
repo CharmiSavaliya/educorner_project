@@ -21,22 +21,22 @@ class _LogInScreenState extends State<LogInScreen> {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Welcome Back!',
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Login to Edu Corner',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextFormField(
                 textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
@@ -44,10 +44,10 @@ class _LogInScreenState extends State<LogInScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  fillColor: Color.fromARGB(255, 242, 249, 255),
+                  fillColor: const Color.fromARGB(255, 242, 249, 255),
                   filled: true,
                   hintText: 'Email Address',
-                  suffixIcon: Icon(Icons.email),
+                  suffixIcon: const Icon(Icons.email),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -70,10 +70,10 @@ class _LogInScreenState extends State<LogInScreen> {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  fillColor: Color.fromARGB(255, 242, 249, 255),
+                  fillColor: const Color.fromARGB(255, 242, 249, 255),
                   filled: true,
                   hintText: 'Password',
-                  suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                  suffixIcon: const Icon(Icons.remove_red_eye_sharp),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -87,7 +87,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Checkbox(
@@ -98,16 +98,16 @@ class _LogInScreenState extends State<LogInScreen> {
                       });
                     },
                   ),
-                  Text("Remember Me"),
-                  Spacer(),
+                  const Text("Remember Me"),
+                  const Spacer(),
                   InkWell(
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ResetPasswordScreen(),
+                        builder: (context) => const ResetPasswordScreen(),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       "Forgot Password ?",
                       style: TextStyle(color: Colors.blue),
                     ),
@@ -123,11 +123,11 @@ class _LogInScreenState extends State<LogInScreen> {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 35, 113, 176),
+                        color: const Color.fromARGB(255, 35, 113, 176),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Color.fromARGB(255, 39, 116, 179),
+                          color: const Color.fromARGB(255, 39, 116, 179),
                           width: 1.0,
                         ),
                       ),
@@ -135,7 +135,7 @@ class _LogInScreenState extends State<LogInScreen> {
                         onTap: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Processing Data')),
+                              const SnackBar(content: Text('Processing Data')),
                             );
                           }
                         },
@@ -144,7 +144,7 @@ class _LogInScreenState extends State<LogInScreen> {
                             onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomnavigationbarScreen(),
+                                builder: (context) => const BottomnavigationbarScreen(),
                               ),
                             ),
                             child: const Text(
@@ -162,8 +162,8 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              Row(
+              const SizedBox(height: 20),
+              const Row(
                 children: [
                   Expanded(
                     child: Divider(
@@ -172,7 +172,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       "or",
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -186,7 +186,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 45,
                 width: 400,
@@ -205,7 +205,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset('assets/google.png'),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       const Text(
                         "Sign In with Google",
                         style: TextStyle(
@@ -218,7 +218,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 45,
                 width: 400,
@@ -229,7 +229,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(3),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -238,7 +238,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           color: Colors.white,
                         ),
                         SizedBox(width: 10),
-                        const Text(
+                        Text(
                           "Sign In with Facebook",
                           style: TextStyle(
                             color: Colors.white,
@@ -251,7 +251,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               SizedBox(
                 height: 45,
                 width: 400,
@@ -262,7 +262,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(3),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -271,7 +271,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           color: Colors.white,
                         ),
                         SizedBox(width: 10),
-                        const Text(
+                        Text(
                           "Continue with Apple",
                           style: TextStyle(
                             color: Colors.white,
@@ -284,23 +284,23 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Already have an account?',
                     style: TextStyle(color: Colors.grey, fontSize: 15),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   InkWell(
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SignUpScreen(),
+                        builder: (context) => const SignUpScreen(),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Sign Up Now',
                       style: TextStyle(
                         color: Color.fromARGB(255, 39, 116, 179),

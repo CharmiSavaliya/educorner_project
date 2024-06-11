@@ -21,22 +21,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Form(
               key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Welcome!',
                     style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const Text(
                     'Sign Up to Edu Corner',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
@@ -44,10 +44,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      fillColor: Color.fromARGB(255, 242, 249, 255),
+                      fillColor: const Color.fromARGB(255, 242, 249, 255),
                       filled: true,
                       hintText: 'Name',
-                      suffixIcon: Icon(Icons.person),
+                      suffixIcon: const Icon(Icons.person),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -67,10 +67,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      fillColor: Color.fromARGB(255, 242, 249, 255),
+                      fillColor: const Color.fromARGB(255, 242, 249, 255),
                       filled: true,
                       hintText: 'Email Address',
-                      suffixIcon: Icon(Icons.email),
+                      suffixIcon: const Icon(Icons.email),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -93,10 +93,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      fillColor: Color.fromARGB(255, 242, 249, 255),
+                      fillColor: const Color.fromARGB(255, 242, 249, 255),
                       filled: true,
                       hintText: 'Password',
-                      suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                      suffixIcon: const Icon(Icons.remove_red_eye_sharp),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -119,10 +119,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      fillColor: Color.fromARGB(255, 242, 249, 255),
+                      fillColor: const Color.fromARGB(255, 242, 249, 255),
                       filled: true,
                       hintText: 'Confirm Password',
-                      suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                      suffixIcon: const Icon(Icons.remove_red_eye_sharp),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -143,11 +143,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Color(0xFF0E74BC),
+                        color: const Color(0xFF0E74BC),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Color.fromARGB(255, 39, 116, 179),
+                          color: const Color.fromARGB(255, 39, 116, 179),
                           width: 1.0,
                         ),
                       ),
@@ -155,7 +155,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         onTap: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Processing Data')),
+                              const SnackBar(content: Text('Processing Data')),
                             );
                           }
                         },
@@ -164,7 +164,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => BottomnavigationbarScreen(),
+                                builder: (context) => const BottomnavigationbarScreen(),
                               ),
                             ),
                             child: const Text(
@@ -180,8 +180,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Row(
+                  const SizedBox(height: 20),
+                  const Row(
                     children: [
                       Expanded(
                         child: Divider(
@@ -190,7 +190,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
                           "or",
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -204,7 +204,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 45,
                     width: 400,
@@ -223,7 +223,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset('assets/google.png'),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           const Text(
                             "Sign In with Google",
                             style: TextStyle(
@@ -236,7 +236,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 45,
                     width: 400,
@@ -247,7 +247,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -256,7 +256,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            const Text(
+                            Text(
                               "Sign In with Facebook",
                               style: TextStyle(
                                 color: Colors.white,
@@ -269,7 +269,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 45,
                     width: 400,
@@ -280,7 +280,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -289,7 +289,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: Colors.white,
                             ),
                             SizedBox(width: 10),
-                            const Text(
+                            Text(
                               "Continue with Apple",
                               style: TextStyle(
                                 color: Colors.white,
@@ -302,23 +302,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Already have an account?',
                         style: TextStyle(color: Colors.grey, fontSize: 15),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       InkWell(
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LogInScreen(),
+                            builder: (context) => const LogInScreen(),
                           ),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Login Now',
                           style: TextStyle(
                             color: Color.fromARGB(255, 39, 116, 179),

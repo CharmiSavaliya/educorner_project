@@ -34,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           SmoothPageIndicator(
             controller: _pageController,
             count: 5,
-            effect: WormEffect(
+            effect: const WormEffect(
               dotWidth: 10.0,
               dotHeight: 10.0,
               spacing: 16.0,
@@ -42,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               activeDotColor: Colors.blue,
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
         ],
       ),
     );
@@ -66,20 +66,20 @@ class _Screen1State extends State<Screen1> {
               Center(
                 child: Image.asset('assets/Screen1.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Explore LimitLess \n Learning',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
+                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                   '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -88,7 +88,7 @@ class _Screen1State extends State<Screen1> {
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 35, 113, 176),
+                    color: const Color.fromARGB(255, 35, 113, 176),
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -98,8 +98,8 @@ class _Screen1State extends State<Screen1> {
                         MaterialPageRoute(
                           builder: (context) => Screen2(),
                         )),
-                    child: Center(
-                      child: const Text(
+                    child: const Center(
+                      child: Text(
                         " NEXT",
                         style: TextStyle(
                           color: Colors.white,
@@ -121,7 +121,7 @@ class _Screen1State extends State<Screen1> {
             height: 45,
             width: 65,
             padding: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color.fromARGB(255, 35, 113, 176),
               borderRadius: BorderRadius.all(Radius.circular(40)),
             ),
@@ -131,8 +131,8 @@ class _Screen1State extends State<Screen1> {
                   MaterialPageRoute(
                     builder: (context) => Screen5(),
                   )),
-              child: Center(
-                child: const Text(
+              child: const Center(
+                child: Text(
                   " skip",
                   style: TextStyle(
                     color: Colors.white,
@@ -161,20 +161,20 @@ class Screen2 extends StatelessWidget {
               Center(
                 child: Image.asset('assets/Screen2.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Set The Stage For \n        Success',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
+                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                   '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -190,7 +190,7 @@ class Screen2 extends StatelessWidget {
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                         border: Border.all(
-                          color: Color.fromARGB(255, 39, 116, 179),
+                          color: const Color.fromARGB(255, 39, 116, 179),
                           width: 1.0,
                         ),
                       ),
@@ -200,8 +200,8 @@ class Screen2 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen1(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             "BACK",
                             style: TextStyle(
                               color: Colors.black,
@@ -213,7 +213,7 @@ class Screen2 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   SizedBox(
@@ -222,7 +222,7 @@ class Screen2 extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 35, 113, 176),
+                        color: const Color.fromARGB(255, 35, 113, 176),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                       ),
@@ -232,8 +232,8 @@ class Screen2 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen3(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             " NEXT",
                             style: TextStyle(
                               color: Colors.white,
@@ -256,7 +256,7 @@ class Screen2 extends StatelessWidget {
               height: 45,
               width: 65,
               padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 35, 113, 176),
                 borderRadius: BorderRadius.all(Radius.circular(40)),
               ),
@@ -266,8 +266,8 @@ class Screen2 extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Screen5(),
                     )),
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     " skip",
                     style: TextStyle(
                       color: Colors.white,
@@ -286,6 +286,8 @@ class Screen2 extends StatelessWidget {
 }
 
 class Screen3 extends StatelessWidget {
+  const Screen3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -297,20 +299,20 @@ class Screen3 extends StatelessWidget {
               Center(
                 child: Image.asset('assets/Screen3.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Dive Into Educational \n         Experience',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
+                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                   '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -326,7 +328,7 @@ class Screen3 extends StatelessWidget {
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                         border: Border.all(
-                          color: Color.fromARGB(255, 39, 116, 179),
+                          color: const Color.fromARGB(255, 39, 116, 179),
                           width: 1.0,
                         ),
                       ),
@@ -336,8 +338,8 @@ class Screen3 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen2(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             "BACK",
                             style: TextStyle(
                               color: Colors.black,
@@ -349,7 +351,7 @@ class Screen3 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   SizedBox(
@@ -358,7 +360,7 @@ class Screen3 extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 35, 113, 176),
+                        color: const Color.fromARGB(255, 35, 113, 176),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                       ),
@@ -368,8 +370,8 @@ class Screen3 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen4(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             " NEXT",
                             style: TextStyle(
                               color: Colors.white,
@@ -392,7 +394,7 @@ class Screen3 extends StatelessWidget {
               height: 45,
               width: 65,
               padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 35, 113, 176),
                 borderRadius: BorderRadius.all(Radius.circular(40)),
               ),
@@ -402,8 +404,8 @@ class Screen3 extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Screen5(),
                     )),
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     " skip",
                     style: TextStyle(
                       color: Colors.white,
@@ -433,20 +435,20 @@ class Screen4 extends StatelessWidget {
               Center(
                 child: Image.asset('assets/Screen4.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 'Start Your Academic \n          Journey ',
                 style: TextStyle(
-                    color: const Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
+                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                   '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -462,7 +464,7 @@ class Screen4 extends StatelessWidget {
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                         border: Border.all(
-                          color: Color.fromARGB(255, 39, 116, 179),
+                          color: const Color.fromARGB(255, 39, 116, 179),
                           width: 1.0,
                         ),
                       ),
@@ -472,8 +474,8 @@ class Screen4 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen3(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             "BACK",
                             style: TextStyle(
                               color: Colors.black,
@@ -485,7 +487,7 @@ class Screen4 extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   SizedBox(
@@ -494,7 +496,7 @@ class Screen4 extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 35, 113, 176),
+                        color: const Color.fromARGB(255, 35, 113, 176),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(3),
                       ),
@@ -504,8 +506,8 @@ class Screen4 extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => Screen5(),
                             )),
-                        child: Center(
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             " NEXT",
                             style: TextStyle(
                               color: Colors.white,
@@ -528,7 +530,7 @@ class Screen4 extends StatelessWidget {
               height: 45,
               width: 65,
               padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 35, 113, 176),
                 borderRadius: BorderRadius.all(Radius.circular(40)),
               ),
@@ -538,8 +540,8 @@ class Screen4 extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Screen5(),
                     )),
-                child: Center(
-                  child: const Text(
+                child: const Center(
+                  child: Text(
                     " skip",
                     style: TextStyle(
                       color: Colors.white,
@@ -567,19 +569,19 @@ class Screen5 extends StatelessWidget {
           Center(
             child: Image.asset('assets/Screen5.png'),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
             'Engage Deeply With \n        Edu Corner ',
-            style: TextStyle(color: const Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
               '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Column(
@@ -591,11 +593,11 @@ class Screen5 extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 35, 113, 176),
+                    color: const Color.fromARGB(255, 35, 113, 176),
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(3),
                     border: Border.all(
-                      color: Color.fromARGB(255, 39, 116, 179),
+                      color: const Color.fromARGB(255, 39, 116, 179),
                       width: 1.0,
                     ),
                   ),
@@ -605,8 +607,8 @@ class Screen5 extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => Screen3(),
                         )),
-                    child: Center(
-                      child: const Text(
+                    child: const Center(
+                      child: Text(
                         "EXPLORE COURSES",
                         style: TextStyle(
                           color: Colors.white,
@@ -618,7 +620,7 @@ class Screen5 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -631,7 +633,7 @@ class Screen5 extends StatelessWidget {
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(3),
                     border: Border.all(
-                      color: Color.fromARGB(255, 39, 116, 179),
+                      color: const Color.fromARGB(255, 39, 116, 179),
                       width: 1.0,
                     ),
                   ),
@@ -639,10 +641,10 @@ class Screen5 extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SignUpScreen(),
+                          builder: (context) => const SignUpScreen(),
                         )),
-                    child: Center(
-                      child: const Text(
+                    child: const Center(
+                      child: Text(
                         "SIGN UP",
                         style: TextStyle(
                           color: Colors.black,
@@ -654,13 +656,13 @@ class Screen5 extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Already have an account?',
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
@@ -668,9 +670,9 @@ class Screen5 extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LogInScreen(),
+                          builder: (context) => const LogInScreen(),
                         )),
-                    child: Text(
+                    child: const Text(
                       'Login',
                       style: TextStyle(color: Color.fromARGB(255, 39, 116, 179), fontSize: 20),
                     ),

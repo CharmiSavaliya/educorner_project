@@ -18,15 +18,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pop(HomeScreen());
+              Navigator.of(context).pop(const HomeScreen());
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.black,
             ),
           ),
           backgroundColor: Colors.white,
-          bottom: TabBar(
+          bottom: const TabBar(
             labelColor: Colors.blue,
             unselectedLabelColor: Colors.grey,
             indicatorColor: Colors.blue,
@@ -39,7 +39,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               ),
             ],
           ),
-          title: Text(
+          title: const Text(
             'Notifications',
             style: TextStyle(color: Colors.black),
           ),
@@ -49,9 +49,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 15),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const SizedBox(height: 15),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Today',
                     style: TextStyle(
@@ -61,12 +61,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Expanded(
                   child: ListView(
                     children: [
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -74,14 +74,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Andrew ',
@@ -99,11 +99,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             '23 mins ago',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -127,9 +127,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -137,14 +137,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Jacklin ',
@@ -162,11 +162,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             '30 mins ago',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -190,9 +190,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -200,14 +200,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Muneeza ',
@@ -225,11 +225,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             '1 hour ago',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -253,9 +253,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -263,14 +263,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'William ',
@@ -288,11 +288,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             '2 hours ago',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -316,9 +316,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -326,14 +326,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Jackson ',
@@ -351,11 +351,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             '6 hours ago',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -379,9 +379,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      const SizedBox(height: 5),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
                         child: Text(
                           'Yesterday',
                           style: TextStyle(
@@ -392,7 +392,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -400,14 +400,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Aleena ',
@@ -425,11 +425,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             'Thursday 10:45 am',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -454,7 +454,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                        margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
@@ -462,14 +462,14 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset: Offset(3, 3),
+                              offset: const Offset(3, 3),
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: ListTile(
                           title: RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
                                   text: 'Alexa ',
@@ -505,11 +505,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
                               ],
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             'Thursday 12:45 pm',
                             style: TextStyle(color: Colors.blue),
                           ),
-                          leading: Stack(
+                          leading: const Stack(
                             children: [
                               CircleAvatar(
                                 radius: 30,
@@ -538,7 +538,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 ),
               ],
             ),
-            Center(child: Text('Unread notifications will be displayed here.')),
+            const Center(child: Text('Unread notifications will be displayed here.')),
           ],
         ),
       ),

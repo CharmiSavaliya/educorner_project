@@ -19,65 +19,65 @@ class _CertificatePageScreenState extends State<CertificatePageScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'Advanced SEO',
                   style: TextStyle(color: Colors.blue, fontSize: 30, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   'Certificate',
                   style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20),
-                Divider(
+                const SizedBox(height: 20),
+                const Divider(
                   thickness: 5,
                   color: Colors.blue,
                   indent: 140,
                   endIndent: 140,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Sara Rehman',
                         style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 20),
-                      Text(
+                      const SizedBox(height: 20),
+                      const Text(
                         'Lorem ipsum dolor sit amet consectetur. Tincidunt tincidunt et dignissim nullam sit elit urna. Neque id lacinia eu imperdiet turpis neque. Magna et enim aenean nisl dignissim enim malesuada justo. At pharetra elit lectus vitae sapien enim magna enim leo.',
                         style: TextStyle(color: Colors.grey, fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
                           Column(
                             children: [
                               Image.asset('assets/sign.png'),
-                              SizedBox(height: 20),
-                              Text(
+                              const SizedBox(height: 20),
+                              const Text(
                                 'Umair Taseer',
                                 style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(height: 10),
-                              Text(
+                              const SizedBox(height: 10),
+                              const Text(
                                 'Instructor',
                                 style: TextStyle(color: Colors.grey, fontSize: 25, fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Column(
                             children: [
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
                                   Image.asset('assets/badge2.png'),
-                                  Text(
+                                  const Text(
                                     'EduCorner',
                                     style: TextStyle(
                                       color: Colors.blue,
@@ -87,23 +87,23 @@ class _CertificatePageScreenState extends State<CertificatePageScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 20),
-                              Text(
+                              const SizedBox(height: 20),
+                              const Text(
                                 'Edu Corner',
                                 style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(height: 10),
-                              Text(
+                              const SizedBox(height: 10),
+                              const Text(
                                 'Course App',
                                 style: TextStyle(color: Colors.grey, fontSize: 25, fontWeight: FontWeight.bold),
                               ),
-                              SizedBox(height: 15),
+                              const SizedBox(height: 15),
                             ],
                           ),
                         ],
                       ),
-                      SizedBox(height: 40),
-                      Center(
+                      const SizedBox(height: 40),
+                      const Center(
                         child: Text(
                           'Download Now',
                           textAlign: TextAlign.center,

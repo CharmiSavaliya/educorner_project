@@ -20,28 +20,28 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 10,
+                const SizedBox(
+                  height: 10
                 ),
                 Row(
                   children: [
                     IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop(HomeScreen());
+                        Navigator.of(context).pop(const HomeScreen());
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       'Bookmarks',
                       style: TextStyle(color: Colors.black, fontSize: 25),
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -56,7 +56,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -64,14 +64,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Image.asset('assets/bookmark1.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
+                          const Padding(
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
-                                    const Text(
+                                    Text(
                                       "DevOps",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -106,7 +106,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 19,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.8",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -115,7 +115,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       ),
                                     ),
                                     SizedBox(width: 5),
-                                    const Text(
+                                    Text(
                                       "(1.8k Learners)",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -133,7 +133,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -148,7 +148,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -156,14 +156,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Image.asset('assets/bookmark3.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
+                          const Padding(
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Flutter Flow",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -198,7 +198,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 19,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.8",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -207,7 +207,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       ),
                                     ),
                                     SizedBox(width: 5),
-                                    const Text(
+                                    Text(
                                       "(1.8k Learners)",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -225,7 +225,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -240,7 +240,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -248,14 +248,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Image.asset('assets/down1.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
+                          const Padding(
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Advanced SEO",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -290,7 +290,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 19,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.9",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -299,7 +299,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       ),
                                     ),
                                     SizedBox(width: 5),
-                                    const Text(
+                                    Text(
                                       "(1.8k Learners)",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -317,7 +317,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -332,7 +332,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -340,14 +340,14 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                         ),
                         child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                           Image.asset('assets/down2.png'),
-                          Padding(
-                            padding: const EdgeInsets.all(10),
+                          const Padding(
+                            padding: EdgeInsets.all(10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
-                                    const Text(
+                                    Text(
                                       "AI For Beginners",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -382,7 +382,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 19,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.8",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -391,7 +391,7 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                                       ),
                                     ),
                                     SizedBox(width: 5),
-                                    const Text(
+                                    Text(
                                       "(1.8k Learners)",
                                       style: TextStyle(
                                         color: Colors.grey,

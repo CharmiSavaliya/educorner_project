@@ -16,15 +16,15 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pop(SettingScreen());
+              Navigator.of(context).pop(const SettingScreen());
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               color: Colors.black,
             ),
           ),
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             'My Projects',
             style: TextStyle(color: Colors.black),
           ),
@@ -43,7 +43,7 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
-                      offset: Offset(5, 3),
+                      offset: const Offset(5, 3),
                       blurRadius: 5,
                       spreadRadius: 1,
                     ),
@@ -54,21 +54,21 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Image.asset(
                         'assets/project1.png',
                         width: 400,
                         fit: BoxFit.fitWidth,
                       ),
-                      SizedBox(height: 10),
-                      Text(
+                      const SizedBox(height: 10),
+                      const Text(
                         'UI Design On Online Shopping App',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Sara rehman',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
                       )
@@ -76,7 +76,7 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 height: 390,
                 width: 400,
@@ -86,7 +86,7 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
-                      offset: Offset(5, 3),
+                      offset: const Offset(5, 3),
                       blurRadius: 5,
                       spreadRadius: 1,
                     ),
@@ -97,21 +97,21 @@ class _MyProjectScreenState extends State<MyProjectScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Image.asset(
                         'assets/project2.png',
                         width: 400,
                         fit: BoxFit.fitWidth,
                       ),
-                      SizedBox(height: 15),
-                      Text(
+                      const SizedBox(height: 15),
+                      const Text(
                         'Face Detection App in Android',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Text(
+                      const Text(
                         'Sara rehman',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
                       )

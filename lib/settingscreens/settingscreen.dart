@@ -137,11 +137,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -155,7 +155,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -176,11 +176,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -194,7 +194,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -229,11 +229,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -247,7 +247,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -282,11 +282,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -300,7 +300,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -321,11 +321,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -339,7 +339,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -367,11 +367,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -385,7 +385,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -420,11 +420,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -438,7 +438,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(
@@ -473,11 +473,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
                 height: 65,
                 width: 375,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 233, 243, 251),
                 ),
                 child: ListView(
@@ -491,7 +491,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             width: 3,
                           ),
                         ),
-                        child: CircleAvatar(
+                        child: const CircleAvatar(
                           radius: 20,
                           backgroundColor: Color.fromARGB(255, 201, 221, 234),
                           child: Icon(

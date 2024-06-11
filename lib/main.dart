@@ -2,7 +2,7 @@ import 'package:educorner_project/screen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -22,3 +22,15 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

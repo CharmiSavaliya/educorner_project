@@ -21,28 +21,28 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
                     IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop(SettingScreen());
+                        Navigator.of(context).pop(const SettingScreen());
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       'My Certificates',
                       style: TextStyle(color: Colors.black, fontSize: 25),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 GestureDetector(
                   onTap: () => Navigator.push(
                     context,
@@ -64,7 +64,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.5),
-                                offset: Offset(-5, 5),
+                                offset: const Offset(-5, 5),
                                 blurRadius: 10,
                                 spreadRadius: 1,
                               ),
@@ -87,12 +87,12 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      SizedBox(width: 40),
+                                      const SizedBox(width: 40),
                                       Image.asset('assets/badge.png')
                                     ],
                                   ),
-                                  SizedBox(height: 10),
-                                  Row(
+                                  const SizedBox(height: 10),
+                                  const Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
@@ -114,7 +114,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -129,7 +129,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -152,12 +152,12 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    SizedBox(width: 25),
+                                    const SizedBox(width: 25),
                                     Image.asset('assets/badge.png')
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Row(
+                                const SizedBox(height: 10),
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
@@ -178,7 +178,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -193,7 +193,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -216,12 +216,12 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    SizedBox(width: 65),
+                                    const SizedBox(width: 65),
                                     Image.asset('assets/badge.png'),
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Row(
+                                const SizedBox(height: 10),
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
@@ -242,7 +242,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -257,7 +257,7 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(-5, 5),
+                              offset: const Offset(-5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -280,12 +280,12 @@ class _MyCertificateScreenState extends State<MyCertificateScreen> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                     ),
-                                    SizedBox(width: 35),
+                                    const SizedBox(width: 35),
                                     Image.asset('assets/badge.png'),
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Row(
+                                const SizedBox(height: 10),
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(

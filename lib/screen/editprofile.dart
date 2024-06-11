@@ -22,15 +22,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop(SettingScreen());
+            Navigator.of(context).pop(const SettingScreen());
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
         ),
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           'Edit Profile',
           style: TextStyle(color: Colors.black),
         ),
@@ -43,7 +43,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
+                const Stack(
                   children: [
                     CircleAvatar(
                       radius: 80,
@@ -65,15 +65,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Name:',
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     TextFormField(
                       controller: _nameController,
                       decoration: InputDecoration(
@@ -89,15 +89,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Email Address:',
                           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
@@ -116,15 +116,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               'Password:',
                               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.grey),
                             ),
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             TextFormField(
                               controller: _passwordController,
                               obscureText: true,
@@ -144,7 +144,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 return null;
                               },
                             ),
-                            SizedBox(height: 20),
+                            const SizedBox(height: 20),
                             Row(
                               children: [
                                 Container(
@@ -159,11 +159,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                   ),
                                   child: Column(
                                     children: [
-                                      SizedBox(height: 20),
+                                      const SizedBox(height: 20),
                                       Image.asset(
                                         'assets/knowledgesharing.png',
                                       ),
-                                      Padding(
+                                      const Padding(
                                         padding: EdgeInsets.all(8),
                                         child: Text(
                                           'Knowleadge sharing',
@@ -177,7 +177,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(width: 15),
+                                const SizedBox(width: 15),
                                 Container(
                                   height: 200,
                                   width: 180,
@@ -190,12 +190,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                   ),
                                   child: Column(
                                     children: [
-                                      SizedBox(height: 20),
+                                      const SizedBox(height: 20),
                                       Image.asset(
                                         'assets/bookmarki.png',
                                       ),
-                                      SizedBox(width: 25),
-                                      Padding(
+                                      const SizedBox(width: 25),
+                                      const Padding(
                                         padding: EdgeInsets.all(8),
                                         child: Text(
                                           'Bookmarks',
@@ -211,7 +211,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 ),
                               ],
                             ),
-                            SizedBox(height: 30),
+                            const SizedBox(height: 30),
                             SizedBox(
                               height: 48,
                               width: 375,
@@ -219,18 +219,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 onTap: () {
                                   if (_formKey.currentState!.validate()) {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text('Profile updated successfully')),
+                                      const SnackBar(content: Text('Profile updated successfully')),
                                     );
                                   }
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(15),
                                   decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 35, 113, 176),
+                                    color: const Color.fromARGB(255, 35, 113, 176),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.circular(10),
                                     border: Border.all(
-                                      color: Color.fromARGB(255, 39, 116, 179),
+                                      color: const Color.fromARGB(255, 39, 116, 179),
                                       width: 1.0,
                                     ),
                                   ),
@@ -239,7 +239,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                       onTap: () {
                                         if (_formKey.currentState!.validate()) {
                                           ScaffoldMessenger.of(context).showSnackBar(
-                                            SnackBar(content: Text('Profile updated successfully')),
+                                            const SnackBar(content: Text('Profile updated successfully')),
                                           );
                                         }
                                       },

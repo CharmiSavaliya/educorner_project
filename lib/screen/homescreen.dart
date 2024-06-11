@@ -37,23 +37,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                 builder: (context) => const ProfileScreen(),
                               )),
-                          child: CircleAvatar(
+                          child: const CircleAvatar(
                             radius: 30,
-                            foregroundImage: const AssetImage("assets/profilephoto.png"),
+                            foregroundImage: AssetImage("assets/profilephoto.png"),
                           ),
                         ),
-                        SizedBox(width: 10),
-                        Text(
+                        const SizedBox(width: 10),
+                        const Text(
                           "Hello,Sara!",
                           style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500, color: Color(0xff344054)),
                         ),
                         Image.asset('assets/hey.png'),
-                        SizedBox(width: 80),
+                        const SizedBox(width: 80),
                         InkWell(
                             onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => SettingScreen(),
+                                    builder: (context) => const SettingScreen(),
                                   ),
                                 ),
                             child: Image.asset('assets/setting.png')),
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => NotificationScreen(),
+                              builder: (context) => const NotificationScreen(),
                             ),
                           ),
                           child: Image.asset('assets/notification.png'),
@@ -99,16 +99,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width * 0.1, // 20% of screen width
                           height: MediaQuery.of(context).size.width * 0.1, // 20% of screen width
                           decoration: BoxDecoration(
-                            color: Color(0xFF0E74BC),
+                            color: const Color(0xFF0E74BC),
                             borderRadius: BorderRadius.circular(2),
-                            image: DecorationImage(
+                            image: const DecorationImage(
                               image: AssetImage('assets/tune.png'),
                               colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
                               fit: BoxFit.cover,
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   SingleChildScrollView(
@@ -147,12 +147,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.grey,
                             ),
                           ),
-                          child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                          child: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                             Icon(
                               Icons.web_asset_outlined,
                               color: Color.fromARGB(255, 15, 119, 205),
                             ),
-                            const Text(
+                            Text(
                               "UI UX Design",
                               style: TextStyle(
                                 color: Colors.black,
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ]),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Container(
@@ -177,13 +177,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 1.0,
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.computer_outlined,
                                 color: Color.fromARGB(255, 15, 119, 205),
                               ),
-                              const Text(
+                              Text(
                                 "Web Development",
                                 style: TextStyle(
                                   color: Colors.black,
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Container(
@@ -209,13 +209,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 1.0,
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             children: [
                               Icon(
                                 Icons.mobile_screen_share,
                                 color: Color.fromARGB(255, 15, 119, 205),
                               ),
-                              const Text(
+                              Text(
                                 "Figma",
                                 style: TextStyle(
                                   color: Colors.black,
@@ -229,8 +229,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 15),
-                  Row(
+                  const SizedBox(height: 15),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
@@ -248,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(5, 5),
+                              offset: const Offset(5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -282,16 +282,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CircleAvatar(
+                                    const CircleAvatar(
                                       radius: 20,
-                                      foregroundImage: const AssetImage("assets/angela.png"),
+                                      foregroundImage: AssetImage("assets/angela.png"),
                                     ),
-                                    SizedBox(width: 5),
-                                    Text(
+                                    const SizedBox(width: 5),
+                                    const Text(
                                       "Angela White",
                                       style: TextStyle(
                                         fontSize: 18,
@@ -299,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.grey,
                                       ),
                                     ),
-                                    SizedBox(width: 15),
+                                    const SizedBox(width: 15),
                                     Stack(
                                       alignment: Alignment.center,
                                       children: [
@@ -309,20 +309,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: CircularProgressIndicator(
                                             strokeWidth: 5,
                                             value: progressPercentage / 100,
-                                            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                            valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                                             backgroundColor: Colors.grey[300],
                                           ),
                                         ),
                                         Text(
                                           '${progressPercentage.toInt()}%',
-                                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Row(
+                                const SizedBox(height: 10),
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -346,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -359,7 +359,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(5, 5),
+                              offset: const Offset(5, 5),
                               blurRadius: 10,
                               spreadRadius: 1,
                             ),
@@ -380,16 +380,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CircleAvatar(
+                                    const CircleAvatar(
                                       radius: 20,
-                                      foregroundImage: const AssetImage("assets/harry.png"),
+                                      foregroundImage: AssetImage("assets/harry.png"),
                                     ),
-                                    SizedBox(width: 5),
-                                    Text(
+                                    const SizedBox(width: 5),
+                                    const Text(
                                       "Harry Wilson",
                                       style: TextStyle(
                                         fontSize: 18,
@@ -397,7 +397,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.grey,
                                       ),
                                     ),
-                                    SizedBox(width: 15),
+                                    const SizedBox(width: 15),
                                     Stack(
                                       alignment: Alignment.center,
                                       children: [
@@ -407,20 +407,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: CircularProgressIndicator(
                                             strokeWidth: 5,
                                             value: progresssPercentage / 100,
-                                            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                            valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                                             backgroundColor: Colors.grey[300],
                                           ),
                                         ),
                                         Text(
                                           '${progresssPercentage.toInt()}%',
-                                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 10),
-                                Row(
+                                const SizedBox(height: 10),
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -444,8 +444,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
-                  Row(
+                  const SizedBox(height: 15),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
@@ -463,7 +463,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -476,7 +476,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(5, 3),
+                              offset: const Offset(5, 3),
                               blurRadius: 5,
                               spreadRadius: 1,
                             ),
@@ -490,14 +490,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 180,
                               fit: BoxFit.fitWidth,
                             ),
-                            SizedBox(height: 13),
-                            Padding(
-                              padding: const EdgeInsets.all(2),
+                            const SizedBox(height: 13),
+                            const Padding(
+                              padding: EdgeInsets.all(2),
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "UI UX Desiging",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -513,7 +513,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Beginners Level",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -540,7 +540,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 18,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.9",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -564,7 +564,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -577,7 +577,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
-                                  offset: Offset(5, 3),
+                                  offset: const Offset(5, 3),
                                   blurRadius: 5,
                                   spreadRadius: 1,
                                 ),
@@ -591,13 +591,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 180,
                                   fit: BoxFit.fitWidth,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(10),
+                                const Padding(
+                                  padding: EdgeInsets.all(10),
                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                     Row(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        const Text(
+                                        Text(
                                           "Digital Marketing",
                                           style: TextStyle(
                                             color: Colors.black,
@@ -613,7 +613,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        const Text(
+                                        Text(
                                           "Beginners Level",
                                           style: TextStyle(
                                             color: Colors.grey,
@@ -641,7 +641,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: Color(0xFFFFAF0C),
                                           size: 18,
                                         ),
-                                        const Text(
+                                        Text(
                                           "5.0",
                                           style: TextStyle(
                                             color: Colors.grey,
@@ -669,8 +669,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                   ),
-                  SizedBox(height: 15),
-                  Row(
+                  const SizedBox(height: 15),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
@@ -688,7 +688,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -701,7 +701,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(5, 3),
+                              offset: const Offset(5, 3),
                               blurRadius: 5,
                               spreadRadius: 1,
                             ),
@@ -715,14 +715,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 180,
                               fit: BoxFit.fitWidth,
                             ),
-                            SizedBox(height: 13),
-                            Padding(
-                              padding: const EdgeInsets.all(2),
+                            const SizedBox(height: 13),
+                            const Padding(
+                              padding: EdgeInsets.all(2),
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "DevOps",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -738,7 +738,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Intermediate  Level",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -765,7 +765,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 18,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.8",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -789,7 +789,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                       Container(
                         height: 270,
                         width: 180,
@@ -799,7 +799,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(5, 3),
+                              offset: const Offset(5, 3),
                               blurRadius: 5,
                               spreadRadius: 1,
                             ),
@@ -813,13 +813,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               width: 180,
                               fit: BoxFit.fitWidth,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(10),
+                            const Padding(
+                              padding: EdgeInsets.all(10),
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Advanced SEO",
                                       style: TextStyle(
                                         color: Colors.black,
@@ -835,7 +835,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+                                    Text(
                                       "Advanced Level",
                                       style: TextStyle(
                                         color: Colors.grey,
@@ -863,7 +863,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       color: Color(0xFFFFAF0C),
                                       size: 18,
                                     ),
-                                    const Text(
+                                    Text(
                                       "4.8",
                                       style: TextStyle(
                                         color: Colors.grey,

@@ -22,28 +22,28 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   children: [
                     IconButton(
                       onPressed: () {
-                        Navigator.of(context).pop(HomeScreen());
+                        Navigator.of(context).pop(const HomeScreen());
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_back,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       'My Courses',
                       style: TextStyle(color: Colors.black, fontSize: 25),
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -105,14 +105,14 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                               width: 2.0,
                             ),
                           ),
-                          child: InkWell(
+                          child: const InkWell(
                             // onTap: () => Navigator.push(
                             //   context,
                             //   MaterialPageRoute(
                             //     builder: (context) => const CallingScreen(),
                             //   ),
                             // ),
-                            child: const Center(
+                            child: Center(
                               child: Text(
                                 "Complete",
                                 style: TextStyle(
@@ -128,7 +128,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -141,7 +141,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            offset: Offset(5, 5),
+                            offset: const Offset(5, 5),
                             blurRadius: 10,
                             spreadRadius: 1,
                           ),
@@ -162,16 +162,16 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CircleAvatar(
+                                  const CircleAvatar(
                                     radius: 20,
-                                    foregroundImage: const AssetImage("assets/angela.png"),
+                                    foregroundImage: AssetImage("assets/angela.png"),
                                   ),
-                                  SizedBox(width: 5),
-                                  Text(
+                                  const SizedBox(width: 5),
+                                  const Text(
                                     "Angela White",
                                     style: TextStyle(
                                       fontSize: 18,
@@ -179,7 +179,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                       color: Colors.grey,
                                     ),
                                   ),
-                                  SizedBox(width: 15),
+                                  const SizedBox(width: 15),
                                   Stack(
                                     alignment: Alignment.center,
                                     children: [
@@ -189,20 +189,20 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                         child: CircularProgressIndicator(
                                           strokeWidth: 5,
                                           value: progressPercentage / 100,
-                                          valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                                           backgroundColor: Colors.grey[300],
                                         ),
                                       ),
                                       Text(
                                         '${progressPercentage.toInt()}%',
-                                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 10),
-                              Row(
+                              const SizedBox(height: 10),
+                              const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -226,7 +226,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -239,7 +239,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                         boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.5),
-                            offset: Offset(5, 5),
+                            offset: const Offset(5, 5),
                             blurRadius: 10,
                             spreadRadius: 1,
                           ),
@@ -260,16 +260,16 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              const SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CircleAvatar(
+                                  const CircleAvatar(
                                     radius: 20,
-                                    foregroundImage: const AssetImage("assets/harry.png"),
+                                    foregroundImage: AssetImage("assets/harry.png"),
                                   ),
-                                  SizedBox(width: 5),
-                                  Text(
+                                  const SizedBox(width: 5),
+                                  const Text(
                                     "Harry Wilson",
                                     style: TextStyle(
                                       fontSize: 18,
@@ -277,7 +277,7 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                       color: Colors.grey,
                                     ),
                                   ),
-                                  SizedBox(width: 15),
+                                  const SizedBox(width: 15),
                                   Stack(
                                     alignment: Alignment.center,
                                     children: [
@@ -287,20 +287,20 @@ class _LiteratureScreenState extends State<LiteratureScreen> {
                                         child: CircularProgressIndicator(
                                           strokeWidth: 5,
                                           value: progresssPercentage / 100,
-                                          valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                          valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
                                           backgroundColor: Colors.grey[300],
                                         ),
                                       ),
                                       Text(
                                         '${progresssPercentage.toInt()}%',
-                                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                       ),
                                     ],
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 10),
-                              Row(
+                              const SizedBox(height: 10),
+                              const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

@@ -33,28 +33,28 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 5,
+                  const SizedBox(
+                    height: 5
                   ),
                   Row(
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.of(context).pop(SettingScreen());
+                          Navigator.of(context).pop(const SettingScreen());
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         'Help & Support',
                         style: TextStyle(color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Padding(
@@ -67,21 +67,21 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
                             labelText: 'Your Name',
                             filled: true,
                             fillColor: Colors.lightBlue.shade50,
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextField(
                           controller: _emailController,
                           decoration: InputDecoration(
                             labelText: 'Your Email',
                             filled: true,
                             fillColor: Colors.lightBlue.shade50,
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                           ),
                           keyboardType: TextInputType.emailAddress,
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         TextField(
                           controller: _descriptionController,
                           decoration: InputDecoration(
@@ -89,13 +89,13 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
                             alignLabelWithHint: true,
                             filled: true,
                             fillColor: Colors.lightBlue.shade50,
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                           ),
                           minLines: 25,
                           maxLines: 30,
                           keyboardType: TextInputType.multiline,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         // ElevatedButton(
                         //   onPressed: () {
                         //     String name = _nameController.text;

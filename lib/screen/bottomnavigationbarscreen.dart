@@ -16,11 +16,11 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
   int currentIndex = 0;
 
   List screens = [
-    HomeScreen(),
-    LiteratureScreen(),
-    BookmarkScreen(),
-    ChatMessageScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const LiteratureScreen(),
+    const BookmarkScreen(),
+    const ChatMessageScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
         backgroundColor: Colors.white,
         body: screens[currentIndex],
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(20.0), topRight: Radius.circular(20.0)),
           child: BottomNavigationBar(
             onTap: (value) {
               setState(() {
@@ -36,7 +36,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
               });
             },
             items: [
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 label: 'Home',
                 tooltip: 'Home',
                 icon: ImageIcon(
@@ -44,7 +44,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
                   color: Colors.black,
                 ),
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 label: "Literature",
                 tooltip: "Literature",
                 icon: ImageIcon(
@@ -52,7 +52,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
                   color: Colors.black,
                 ),
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 label: "Bookmark",
                 tooltip: "Bookmark",
                 icon: ImageIcon(
@@ -60,7 +60,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
                   color: Colors.black,
                 ),
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 label: "Chats",
                 tooltip: "Chats",
                 icon: ImageIcon(
@@ -68,7 +68,7 @@ class _BottomnavigationbarScreenState extends State<BottomnavigationbarScreen> {
                   color: Colors.black,
                 ),
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 label: "Profile",
                 tooltip: "Profile",
                 icon: ImageIcon(
