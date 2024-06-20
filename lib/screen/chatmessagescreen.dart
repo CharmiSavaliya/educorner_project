@@ -1,6 +1,5 @@
 import 'package:educorner_project/screen/callingscreen.dart';
 import 'package:educorner_project/screen/homescreen.dart';
-import 'package:educorner_project/settingscreens/settingscreen.dart';
 import 'package:flutter/material.dart';
 
 class ChatMessageScreen extends StatefulWidget {
@@ -22,9 +21,7 @@ class _ChatMessageScreenState extends State<ChatMessageScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 5
-                ),
+                const SizedBox(height: 5),
                 Row(
                   children: [
                     IconButton(
@@ -201,7 +198,7 @@ class _ChatMessageScreenState extends State<ChatMessageScreen> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SettingScreen(),
+                            builder: (context) => const CallingScreen(),
                           ),
                         ),
                         child: Container(

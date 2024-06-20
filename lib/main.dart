@@ -1,8 +1,15 @@
 import 'package:educorner_project/screen/SplashScreen.dart';
+import 'package:educorner_project/screen/bookmarkprovider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => BookmarkProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -22,15 +29,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

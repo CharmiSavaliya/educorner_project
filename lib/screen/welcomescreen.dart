@@ -1,688 +1,325 @@
+import 'package:educorner_project/education.model/educationmodel.dart';
 import 'package:educorner_project/screen/login_screen.dart';
 import 'package:educorner_project/screen/signup_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+  final int startIndex;
+  const WelcomeScreen({Key? key, required this.startIndex}) : super(key: key);
 
   @override
   State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  final PageController _pageController = PageController();
+  late PageController _pageController;
+  late int _currentPageIndex;
+  int _selectedNextButtonIndex = -1;
+  int _selectedBackButtonIndex = -1;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPageIndex = widget.startIndex;
+    _pageController = PageController(initialPage: _currentPageIndex);
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void onPageChanged(int index) {
+    setState(() {
+      _currentPageIndex = index;
+      _selectedNextButtonIndex = -1;
+      _selectedBackButtonIndex = -1;
+    });
+  }
+
+  void _goToNextPage() {
+    if (_currentPageIndex < educationAll.length - 1) {
+      setState(() {
+        _selectedNextButtonIndex = _currentPageIndex;
+      });
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  void _goToPreviousPage() {
+    if (_currentPageIndex > 0) {
+      setState(() {
+        _selectedBackButtonIndex = _currentPageIndex;
+      });
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  void _skip() {
+    setState(() {
+      _currentPageIndex = 0;
+    });
+    _pageController.jumpToPage(4);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Expanded(
-            child: PageView(
-              controller: _pageController,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Screen1(),
-                Screen2(),
-                Screen3(),
-                Screen4(),
-                Screen5(),
+                Expanded(
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: educationAll.length,
+                    onPageChanged: onPageChanged,
+                    itemBuilder: (context, index) {
+                      return _buildPageItem(index);
+                    },
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                _buildPageIndicator(),
+                const SizedBox(height: 16.0),
               ],
             ),
-          ),
-          SmoothPageIndicator(
-            controller: _pageController,
-            count: 5,
-            effect: const WormEffect(
-              dotWidth: 10.0,
-              dotHeight: 10.0,
-              spacing: 16.0,
-              dotColor: Colors.grey,
-              activeDotColor: Colors.blue,
-            ),
-          ),
-          const SizedBox(height: 16.0),
-        ],
-      ),
-    );
-  }
-}
-
-class Screen1 extends StatefulWidget {
-  @override
-  State<Screen1> createState() => _Screen1State();
-}
-
-class _Screen1State extends State<Screen1> {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Image.asset('assets/Screen1.png'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Explore LimitLess \n Learning',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                  '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 50,
-                width: 200,
+            Positioned(
+              right: 5,
+              top: 30,
+              child: GestureDetector(
+                onTap: _skip,
                 child: Container(
+                  height: 45,
+                  width: 65,
                   padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: const Color.fromARGB(255, 35, 113, 176),
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.all(Radius.circular(40)),
                   ),
-                  child: InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Screen2(),
-                        )),
-                    child: const Center(
-                      child: Text(
-                        " NEXT",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  child: const Center(
+                    child: Text(
+                      "Skip",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPageItem(int index) {
+    EducationModel screen = educationAll[index];
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const SizedBox(height: 40),
+        Image.asset(screen.image),
+        const SizedBox(height: 30.0),
+        Text(
+          screen.title,
+          style: const TextStyle(
+            fontSize: 34.0,
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 35, 113, 176),
+          ),
+        ),
+        const SizedBox(height: 20.0),
+        Text(
+          screen.discription,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontSize: 16.0,
+            color: Colors.grey,
+          ),
+        ),
+        const SizedBox(height: 20.0),
+        if (index == 4) _buildLoginPageContent(),
+        if (index == 0)
+          ElevatedButton(
+            onPressed: _goToNextPage,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 35, 113, 176),
+              padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+              minimumSize: const Size(220, 30),
+            ),
+            child: const Text('NEXT', style: TextStyle(fontSize: 19)),
+          ),
+        if (index > 0 && index != 4)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _selectedBackButtonIndex = index;
+                    _selectedNextButtonIndex = -1;
+                  });
+                  _goToPreviousPage();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: _selectedBackButtonIndex == index ? const Color.fromARGB(255, 35, 113, 176) : Colors.white,
+                  side: const BorderSide(
+                    color: Color.fromARGB(255, 35, 113, 176),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+                  minimumSize: const Size(180, 40),
+                ),
+                child: Text(
+                  'Back',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: _selectedBackButtonIndex == index ? Colors.white : const Color.fromARGB(255, 35, 113, 176),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _selectedNextButtonIndex = index;
+                    _selectedBackButtonIndex = -1;
+                  });
+                  _goToNextPage();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 35, 113, 176),
+                  side: BorderSide(
+                    color: _selectedNextButtonIndex == index ? const Color.fromARGB(255, 35, 113, 176) : Colors.blue,
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0), // Adjust padding
+                  minimumSize: const Size(180, 40),
+                ),
+                child: const Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Widget _buildPageIndicator() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(educationAll.length, (index) {
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          margin: const EdgeInsets.symmetric(horizontal: 4.0),
+          height: 11.0,
+          width: _currentPageIndex == index ? 12.0 : 12.0,
+          decoration: BoxDecoration(
+            color: _currentPageIndex == index ? const Color.fromARGB(255, 35, 113, 176) : Colors.grey,
+            borderRadius: BorderRadius.circular(6.0),
+          ),
+        );
+      }),
+    );
+  }
+
+  Widget _buildLoginPageContent() {
+    return Column(
+      children: [
+        const SizedBox(height: 30),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _selectedNextButtonIndex = 0;
+            });
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(255, 35, 113, 176),
+            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 77.0),
+          ),
+          child: const Text(
+            'EXPLORE COURSES',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        const SizedBox(height: 15),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              _selectedNextButtonIndex = 1;
+            });
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 128.0),
+          ),
+          child: GestureDetector(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SignUpScreen(),
+                )),
+            child: const Text(
+              'SIGN UP',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 30),
+        RichText(
+          text: TextSpan(
+            children: [
+              const TextSpan(
+                text: 'Already have an account? ',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              TextSpan(
+                text: 'Login',
+                style: const TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 35, 113, 176),
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LogInScreen(),
+                      )),
               ),
             ],
           ),
         ),
-        Positioned(
-          right: 5,
-          top: 30,
-          child: Container(
-            height: 45,
-            width: 65,
-            padding: const EdgeInsets.all(15),
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 35, 113, 176),
-              borderRadius: BorderRadius.all(Radius.circular(40)),
-            ),
-            child: InkWell(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Screen5(),
-                  )),
-              child: const Center(
-                child: Text(
-                  " skip",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        )
       ],
-    );
-  }
-}
-
-class Screen2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Center(
-                child: Image.asset('assets/Screen2.png'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Set The Stage For \n        Success',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                  '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 39, 116, 179),
-                          width: 1.0,
-                        ),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen1(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            "BACK",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 35, 113, 176),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen3(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            " NEXT",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ]),
-          ),
-          Positioned(
-            right: 5,
-            top: 30,
-            child: Container(
-              height: 45,
-              width: 65,
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 35, 113, 176),
-                borderRadius: BorderRadius.all(Radius.circular(40)),
-              ),
-              child: InkWell(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Screen5(),
-                    )),
-                child: const Center(
-                  child: Text(
-                    " skip",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Screen3 extends StatelessWidget {
-  const Screen3({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Center(
-                child: Image.asset('assets/Screen3.png'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Dive Into Educational \n         Experience',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                  '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 39, 116, 179),
-                          width: 1.0,
-                        ),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen2(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            "BACK",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 35, 113, 176),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen4(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            " NEXT",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ]),
-          ),
-          Positioned(
-            right: 5,
-            top: 30,
-            child: Container(
-              height: 45,
-              width: 65,
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 35, 113, 176),
-                borderRadius: BorderRadius.all(Radius.circular(40)),
-              ),
-              child: InkWell(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Screen5(),
-                    )),
-                child: const Center(
-                  child: Text(
-                    " skip",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Screen4 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Container(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Center(
-                child: Image.asset('assets/Screen4.png'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Start Your Academic \n          Journey ',
-                style: TextStyle(
-                    color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                  '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 39, 116, 179),
-                          width: 1.0,
-                        ),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen3(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            "BACK",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: Container(
-                      padding: const EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 35, 113, 176),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(3),
-                      ),
-                      child: InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Screen5(),
-                            )),
-                        child: const Center(
-                          child: Text(
-                            " NEXT",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ]),
-          ),
-          Positioned(
-            right: 5,
-            top: 30,
-            child: Container(
-              height: 45,
-              width: 65,
-              padding: const EdgeInsets.all(15),
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 35, 113, 176),
-                borderRadius: BorderRadius.all(Radius.circular(40)),
-              ),
-              child: InkWell(
-                onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Screen5(),
-                    )),
-                child: const Center(
-                  child: Text(
-                    " skip",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Screen5 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Center(
-            child: Image.asset('assets/Screen5.png'),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            'Engage Deeply With \n        Edu Corner ',
-            style: TextStyle(color: Color.fromARGB(255, 28, 121, 198), fontSize: 30, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-              '     Lorem ipsum dolor sit amet a \nConsectetur. Ut proin accumsan be \n           tincidunt ultricies leo.'),
-          const SizedBox(
-            height: 20,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: 50,
-                width: 350,
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 35, 113, 176),
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(3),
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 39, 116, 179),
-                      width: 1.0,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Screen3(),
-                        )),
-                    child: const Center(
-                      child: Text(
-                        "EXPLORE COURSES",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 50,
-                width: 350,
-                child: Container(
-                  padding: const EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.rectangle,
-                    borderRadius: BorderRadius.circular(3),
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 39, 116, 179),
-                      width: 1.0,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUpScreen(),
-                        )),
-                    child: const Center(
-                      child: Text(
-                        "SIGN UP",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Already have an account?',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
-                  ),
-                  InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LogInScreen(),
-                        )),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(color: Color.fromARGB(255, 39, 116, 179), fontSize: 20),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          )
-        ]),
-      ),
     );
   }
 }
