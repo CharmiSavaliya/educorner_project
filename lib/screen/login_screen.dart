@@ -131,29 +131,20 @@ class _LogInScreenState extends State<LogInScreen> {
                           width: 1.0,
                         ),
                       ),
-                      child: InkWell(
-                        onTap: () {
-                          if (_formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Processing Data')),
-                            );
-                          }
-                        },
-                        child: Center(
-                          child: InkWell(
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const BottomnavigationbarScreen(),
-                              ),
+                      child: Center(
+                        child: InkWell(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const BottomnavigationbarScreen(),
                             ),
-                            child: const Text(
-                              "CONTINUE",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                              ),
+                          ),
+                          child: const Text(
+                            "CONTINUE",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),

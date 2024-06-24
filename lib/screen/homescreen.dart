@@ -21,11 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int progresssPercentage = 60;
   int selected = 0;
   List<bool> bookmarkedStatuses = List.filled(courses.length + books.length, false);
-  void toggleBookmark(int index) {
-    setState(() {
-      bookmarkedStatuses[index] = !bookmarkedStatuses[index];
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 40.0,
                 ),
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               InkWell(
                 onTap: () => Navigator.push(
                   context,
@@ -155,12 +150,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         const SizedBox(width: 5),
         GestureDetector(
-          onTap:() =>  Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FilterScreen(),
-                  ),
-                ),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const FilterScreen(),
+            ),
+          ),
           child: Container(
             width: MediaQuery.of(context).size.width * 0.1,
             height: MediaQuery.of(context).size.width * 0.1,
@@ -169,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: BorderRadius.circular(2),
             ),
             child: SvgPicture.asset(
-              'assets/filter.svg', 
+              'assets/filter.svg',
               colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
               fit: BoxFit.cover,
             ),
@@ -198,33 +193,35 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                Container(
-                  height: 35,
-                  width: 130,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                    border: Border.all(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  child: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                    Icon(
-                      Icons.web_asset_outlined,
-                      color: Color.fromARGB(255, 15, 119, 205),
-                    ),
-                    SizedBox(width: 6),
-                    Text(
-                      "UI UX Design",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 35,
+                    width: 130,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: Colors.grey,
                       ),
                     ),
-                  ]),
+                    child: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                      Icon(
+                        Icons.web_asset_outlined,
+                        color: Color.fromARGB(255, 15, 119, 205),
+                      ),
+                      SizedBox(width: 6),
+                      Text(
+                        "UI UX Design",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
+                  ),
                 ),
-                const SizedBox(width: 6),
                 Container(
                   height: 35,
                   width: 160,
@@ -710,7 +707,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CourseDetailsScreen(course: books),
+          ),
+        ),
         child: Container(
           height: 290,
           width: 180,
